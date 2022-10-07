@@ -35,5 +35,28 @@ In total, we generate 78,246 removal images.
 For authentic dataset, we simply select images from the MS COCO dataset. Therefore, we have 81,910 images in this class.
 
 ___
-Codes and models will be released soon.
+## Testing
+To test the PSCC-Net, simply run ```test.py```. It will probe the images in the ```sample``` folder that contains 6 authentic images and 6 forged images including splicing, copy-move, and removal manipulations.
+
+> You can also put other images in this folder for testing.
+___
+## Training
+For training, you need to first download the generated training dataset and put them into the ```dataset``` folder correspondingly. We provide the ```README``` file in each sub-folder for a guidance.
+Subsequently, run ```train.py``` to retrain the PSCC-Net.
+
+> All hyper-parameters about training are stored in ```utils/config.py```. You may modify them to accommodate your system. Besides, the weights of PSCC-Net are stored in the ```checkpoint``` folder.
+
+___
+## Citations
+If PSCC-Net helps your research or work, please kindly cite our paper. The following is a BibTeX reference.
+```
+@article{liu2022pscc,
+  title={PSCC-Net: Progressive spatio-channel correlation network for image manipulation detection and localization},
+  author={Liu, Xiaohong and Liu, Yaojie and Chen, Jun and Liu, Xiaoming},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology},
+  year={2022},
+  publisher={IEEE}
+}
+```
+
 
