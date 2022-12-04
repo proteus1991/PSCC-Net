@@ -35,6 +35,40 @@ In total, we generate 78,246 removal images.
 For authentic dataset, we simply select images from the MS COCO dataset. Therefore, we have 81,910 images in this class.
 
 ___
+## Test Dataset Illustration
+In total, *six* datasets are used to test the PSCC-Net. 
+For localization, we use Columbia, Coverage, CASIA, NIST16, and IMD20. 
+As for detection, we build a dataset named CASIA-D. 
+We will provide more details below.
+
+### 1. Columbia
+
+It consists of 180 spliced images (Download link: [Columbia](https://www.ee.columbia.edu/ln/dvmm/downloads/authsplcuncmp/)). Note that you need to generate the binary splicing mask by your own from the provided tricolor masks.
+This dataset is only used to test the pre-trained model, and not *split*.
+
+### 2. Coverage
+It consists of 100 copy-moved images (Download link: [Coverage](https://github.com/wenbihan/coverage)). 
+To test the pre-trained model, all images in this dataset are used.
+As for fine-tuning, it is split into 75/25 for training and testing. The name list of test images in fine-tuning is saved in ```dataset/test/Coverage```.
+
+### 3. CASIA
+It has two versions namely, CASIA v1.0 and v2.0 (Download link: [v1.0](https://github.com/namtpham/casia1groundtruth), [v2.0](https://github.com/namtpham/casia2groundtruth)), composed of spliced and copymoved images, where v1.0 has 921 images and v2.0 has 5123 images. For pre-trained model, we sum up images in both v1.0 and v2.0 for testing. 
+To fine-tune the pre-trained model, v2.0 is used for training, and v1.0 is used for testing.
+
+### 4. NIST16
+To download the NIST16 dataset, we need to first complete the license agreement via signing up on this [website](https://mfc.nist.gov/).
+Then, we can download the dataset via the provided link, usually sent by email.
+For pre-trained model, we use in total 564 forged images for testing. To fine-tune the pre-trained model, it is split into 404/160 for training and testing.
+The needed name list is provided in ```dataset/test/NIST16```.
+
+### 5. IMD20
+It is composed of 2010 real-life forged images collected from Internet (Download link: [IMD20](http://staff.utia.cas.cz/novozada/db/)). All images are used to test the pre-trained model, and no fine-tuning is adopted.
+
+### 6. CASIA-D
+Since there is no standard dataset for testing the detection performance, we build a dataset named CASIA-D that consists of 1842 images with 50% forged and 50% pristine from CASIA v1.0 and v2.0.
+The name list of these figures can be found in ```dataset/test/CASIA-D/```.
+
+___
 ## Testing
 To test the PSCC-Net, simply run ```test.py```. It will probe the images in the ```sample``` folder that contains 6 authentic images and 6 forged images including splicing, copy-move, and removal manipulations.
 
