@@ -10,7 +10,7 @@ Accepted in _IEEE Transactions on Circuits and Systems for Video Technology_
 ___
 
 ## Training Dataset Generation
-Since there is no standard IMDL dataset for training, a synthetic dataset is built to train and validate our PSCCNet. This dataset includes four classes. More details and download link can be found below.
+Since there is no standard IMDL dataset for training, a synthetic dataset is built to train and validate our PSCC-Net. This dataset includes four classes. More details are shown as follows. The codes for dataset generation are provided in ```dataset_generation/```, and the download link can be found below.
 
 Download: [Baidu Cloud](https://pan.baidu.com/s/1jbpPNp7UtnKo9OnZeEm1Yw), password: js74
 
